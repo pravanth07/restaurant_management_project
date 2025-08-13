@@ -14,3 +14,6 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'restaurant_management.settings')
 
 application = get_asgi_application()
+
+DEBUG = False
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "your-domain.com"]
