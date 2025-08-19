@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ restaurant_name}}</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to {{ restaurant_name|title}}</h1>
+        </header>
+
+        <main>
+            <p>We're glad to serve you delicious food.</p>
+            <p class="contact"> contact us: {{ restaurant_name}}</p>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 {{ restaurant_name}}. All rights reserved.</p>
+        </footer>
+    </body>
+</html>
