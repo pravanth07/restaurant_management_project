@@ -2,11 +2,69 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{{ restaurant_name}}</title>
+        <title>Contact Us - My Restaurant</title>
+        <style>
+            body {
+                font-family:Arial, sans-serif;
+                margin: 20px;
+                padding: 20px;
+                background-color: #f9f9f9;
+                }
+                h1 {
+                    color: #333;
+                }
+                .contact-info {
+                    margin-top: 20px;  
+                }
+                .contact-info p {
+                    margin: 5px 0;
+                }
+                .contact-form {
+                    margin-top: 30px;
+                    padding: 15px;
+                    background: #fff;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+                    width: 300px;
+                }
+                .contact-form input, .contact-form textarea {
+                    width: 100%;
+                    padding: 8px;
+                    margin: 8px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                }
+                .contact-form button {
+                    background: #28a745;
+                    color: white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+                .contact-form button:hover {
+                    background: #218838;
+                }
+            </style>
     </head>
     <body>
-        <h1>Welcome to {{ restaurant_name|title }}!</h1>
-        <p>We're glad to serve you delicious food.</p>
-        <p><strong>Contact us:</strong> {{ restaurant_name }}</p>
+        <h1>Contact Us</h1>
+        <div class="contact-info">
+            <p><strong>Restaurant Name:</strong> My Restaurant</p>
+            <p><strong>Address:</strong> Suchitra, Hyderabad, Telangana</p>
+            <p><strong>Phone:</strong> (+91) 8977747802</p>
+            <p><strong>Email:</strong> malnadu@gmail.com</p>
+        </div>
+
+        <div class="contact-form">
+            <h3>Send us a message</h3>
+            <form>
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="4" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </body>
-</html>
+</html> 
+ 
