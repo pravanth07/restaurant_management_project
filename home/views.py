@@ -14,3 +14,12 @@ def homepage(request):
             "desription": "At Tasty Bites, we bring you fresh, flavorful meals"
         
         })
+def menu_items(request):
+    menu = [
+        {"name": "pizza", "price": 10},
+        {"name": "Burger", "price": 7},
+        {"name": "pasta", "price":9},
+        {"name": "salad", "price":5},
+    ]
+    return render(request, "menu.html", {"menu" : menu})
+    
