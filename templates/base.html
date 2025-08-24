@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Restaurant{% endblock %}</title>
+    <style>
+        footer {
+            postion: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%
+            background-color: #f1f1f1;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    { % block content %}{% endblock %}
+
+    <footer>
+        &copy; {{now|date:"Y"  }} My Restaurant.All Rights Reserved.
+    </footer>
+</body>
+</html>
