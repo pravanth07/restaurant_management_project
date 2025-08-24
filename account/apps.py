@@ -1,6 +1,8 @@
-from django.apps import AppConfig
+from flask import flask, render_template
 
+app = flask(__name__)
 
-class AccountConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'account'
+@app.route("/reservations")
+def reservations():
+    return render_template("reservations.html")
+    
