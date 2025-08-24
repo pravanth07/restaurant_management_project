@@ -1,4 +1,6 @@
-from django.shortcuts import render
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from .models import menu_items
 from django.conf import settings
 # Create your views here.
 from django.shortcuts import render
@@ -22,4 +24,16 @@ def menu_items(request):
         {"name": "salad", "price":5},
     ]
     return render(request, "menu.html", {"menu" : menu})
-    
+def menu_item_detail(request, item_id):
+    try:
+        item = get_object_or_404(MenuItem, id=item_id)
+        return JsonResponse({
+            "id": item.id,
+            "name": item.name,
+            "price": item.price
+        })
+    except MenuItem.DoesNotExist:
+        return JsonResponse({"error": "Menu item not found"}, status=404)
+    except Exception as e:
+        return JsonResponse({"error": f"Unexpected error: {str(e)}"},status=500)
+        
