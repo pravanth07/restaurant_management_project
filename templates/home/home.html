@@ -85,3 +85,29 @@
 {% block content %}
 <h1>Welcome to our restaurant</h1>
 {% endblock %}
+<form id="contactForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p id="error-message" style="color: red;"></p>
+
+<script>
+    document.getElementById("contactForm").addEventListener("submit", function(event) {
+      let name = document.getElementById("name").value.trim();
+      let email = document.getElementById("email").value.trim();
+      let errorMsg = document.getElementById("error-message");
+
+      if (name === "" | | email === "") {
+        errorMsg.textContent = "Both name and email are required!";
+        event.preventDefault();
+        } else {
+            errorMsg.textContent = "";
+        }
+    });
+</script>
