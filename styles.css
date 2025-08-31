@@ -30,3 +30,25 @@ footer {
     color: white;
     padding: 10px;
 }
+#searchForm {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+#search {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#searchForm button {
+    padding: 8px 12px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#searchForm button:hover {
+    background-color: #45a049;
+}
