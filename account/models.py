@@ -45,4 +45,16 @@ def save(self, *args, **kwargs):
 
 python manage.py makemigrations
 python manage.py migrate
+
+
+
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
+    name = models.CharField(max_length=100)
+    email = models.EmailField(unique=True)
+    phone_number = models.CharField(max_length=15, blank=True, null=True)
+
+
+    def___str___(self):
+        return self.name
 # Create your models here. 
