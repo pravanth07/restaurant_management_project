@@ -17,3 +17,7 @@ def custom_404(request, exception):
     return render(request, "404.html", status=404)
     
 return Response(menu)
+
+def homepage(request):
+    menu_items = Menu.objects.all()
+    return render(request, "homepage.html", {"menu":menu_items})
