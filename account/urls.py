@@ -1,6 +1,6 @@
 
 from django.urls import path
-
+from .views import MenuView
 
 
 
@@ -11,4 +11,7 @@ urlpatterns = [
 urlpatterns = [
     path("reservations/", views.reservations, name="reservations"),
     
+]
+urlpatterns = [
+    path('menu/', MenuView.as_view(), name='menu'),
 ]
