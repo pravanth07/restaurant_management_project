@@ -57,4 +57,6 @@ class UserProfile(models.Model):
 
     def___str___(self):
         return self.name
+
+
 # Create your models here. 
