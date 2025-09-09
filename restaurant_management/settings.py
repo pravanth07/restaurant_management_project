@@ -130,3 +130,22 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 RESTAURANT_NAME = "malnadu"
 RESTAURANT_PHONE = "8977747802"
+from django.conf import settings
+
+def RESTAURANT_NAME(request):
+    return {
+        "restaurant_name": getattr(settings, "RESTAURANT_NAME","My Restaurant")
+
+        
+    }
+TEMPLATES = [
+    {
+        'options': {
+            'context_processors': [
+                #default ones...
+                'myapp.context_processors.restaurant_name',
+
+            ]
+        }
+    }
+]
