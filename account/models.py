@@ -58,5 +58,13 @@ class UserProfile(models.Model):
     def___str___(self):
         return self.name
 
+class comtact(models.model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    submitted_at = models.DateTimeFIeld(auto_now_add=True)
+
+    def___str___(self):
+        return f"{self.name} - {self.email}
+
 
 # Create your models here. 
