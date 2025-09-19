@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .models import MenuItem
 import requests
 class MenuView(APIView):
     def get(self, request):
@@ -28,4 +29,7 @@ def home(request):
     menu_items = response.jscon() if response.status_code == 200 else []
 
     return render(request, "home.html", {"menu_items":menu_items})
-    
+
+def menu(request):
+    items = MenuItem.objects.filter(available=True)
+    return render(request, 'menu.html' , {'items': items})
