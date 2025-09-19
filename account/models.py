@@ -72,6 +72,6 @@ class MenuItem(models.Model):
     available = models.BooleanField(default=True)
 
     def___str___(self):
-        return self.name
+        return f"{self.name} - {self.price}"
 
 # Create your models here. 
