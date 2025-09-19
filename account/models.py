@@ -65,6 +65,13 @@ class comtact(models.model):
 
     def___str___(self):
         return f"{self.name} - {self.email}
+class MenuItem(models.Model):
+    name = models.CharField(max_length=100)
+    description = models.TexttField(blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
+    available = models.BooleanField(default=True)
 
+    def___str___(self):
+        return self.name
 
 # Create your models here. 
