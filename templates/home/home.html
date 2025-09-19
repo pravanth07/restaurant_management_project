@@ -78,7 +78,7 @@
             <p>&copy; 2025 {{ restaurant_name}}. All rights reserved.</p>
         </footer>
     </body>
-</html>
+
 {% extends "base.html" %}
 
 {% block title %}Home{% endblock %}
@@ -116,3 +116,15 @@
     <input type="text" id="search" name="search" placeholder="Search menu items..."/>
     <button type="submit">Search</button>
 </form>
+<head>
+    <title>contact us</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
