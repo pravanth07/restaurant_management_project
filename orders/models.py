@@ -14,4 +14,13 @@ class order(models.Model):
 
     def__str__(self):
         return f"order {self.id} - {self.status}"
+
+class OrderStatus(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+
+    def__str__(self):
+        return self.name
+
+
 # Create your models here.
