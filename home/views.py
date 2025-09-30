@@ -2,6 +2,8 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from .models import menu_items
 from django.conf import settings
+from orders.utils import generate_coupon_code
+from orders.models import Coupon 
 # Create your views here.
 from django.shortcuts import render
 
@@ -36,4 +38,8 @@ def menu_item_detail(request, item_id):
         return JsonResponse({"error": "Menu item not found"}, status=404)
     except Exception as e:
         return JsonResponse({"error": f"Unexpected error: {str(e)}"},status=500)
-        
+
+def create_coupon(discount):
+    code = generate_coupon_code(length=12)
+    coupon = Coupon.objects.create(code=code, discount=discount)
+    return coupon 
