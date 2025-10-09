@@ -7,3 +7,7 @@ urlpatterns = [
 urlpatterns = [
     path('feedback/', views.feedback_view, name='feedback'),
 ]
+urlpatterns = [
+    path('coupons/validate/', CouponValidationView.as_view(), name='coupon-validate'),
+    
+]
