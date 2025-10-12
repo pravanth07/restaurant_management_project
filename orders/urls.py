@@ -11,6 +11,3 @@ urlpatterns = [
     path('coupons/validate/', CouponValidationView.as_view(), name='coupon-validate'),
     
 ]
-sasa
-asa
-sasa
