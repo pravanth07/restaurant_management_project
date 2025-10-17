@@ -14,3 +14,6 @@ urlpatterns = [
 urlpatterns = [
     path('feedback/', views.feedback_view, name='feedback'),
 ]
+urlpatterns = [
+    path('feedback/', views.feedback_view, name='feedback'),
+]
